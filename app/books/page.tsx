@@ -1,6 +1,7 @@
 import React from 'react'
 import {allBooks} from "contentlayer/generated"
 import Link from 'next/link';
+import Image from 'next/image';
 
 async function getAllBooks(){
     const book = allBooks;
@@ -23,15 +24,15 @@ export default async  function BooksPage() {
         In my spare time I love to read paper books. When I am working out I like to play audiobooks. Here are my recommendations
       </p>
 
-      <div className='grid xs:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-between gap-4'>
+      <div className='grid xs:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-between gap-4'>
 
        {
         books.map((book) => (
             <Link href={`/book/${book.slugAsParams}`}>
-                <div className='flex flex-col'>
-                    <img src={book.featuredImage} alt={book.title}/>
+                <div className='flex flex-col break-words'>
+                    <Image src={book.featuredImage} alt={book.title} width={400} height={100} />
                     <span className='font-bold'>{book.title}</span>
-                    <span className='text-slate-700'>{book.description}</span>
+                    <span className='text-slate-700 text-xs break-words'>{book.description}</span>
                 </div>  
             </Link>
         ))
