@@ -1,7 +1,7 @@
 ---
 title: Inaczej
 description: Inaczej is a book about personal productivity and efficiency
-featuredImage: /books/inaczej.png
+featuredImage: /books/inaczej02.png
 slug: Inaczej
 type: Book
 ---
