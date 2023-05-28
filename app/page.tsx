@@ -3,7 +3,7 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 
-import { allBooks, allProjects } from '@/.contentlayer/generated';
+import { allBooks, allProjects, allPosts } from '@/.contentlayer/generated';
 import Image from 'next/image';
 
 async function getAllProjects(){
@@ -19,9 +19,15 @@ async function getAllBooks(){
   return book;
 }
 
+async function getAllPosts(){
+  const posts = allPosts;
+  return posts;
+}
+
 export default async function IndexPage() {
   const projects = await getAllProjects();
   const books = await getAllBooks();
+  const posts = await getAllPosts();
 
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
@@ -82,6 +88,24 @@ export default async function IndexPage() {
         }
         </div>
 
+
+      {/**
+       * Blog
+       */}
+       <h2 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-xl md:text-3xl lg:text-4xl mt-4">Blog</h2>
+        <div className='grid xs:grid-cols-1 md:grid-cols-4 xl:grid-cols-6 justify-between gap-4'>
+          {
+          posts.map((post) => (
+              <Link href={`/book/${post.slugAsParams}`}>
+                  <div className='flex flex-col break-words'>
+                      <Image src={post.featuredImage} alt={post.title} width={400} height={100} />
+                      <span className='font-bold'>{post.title}</span>
+                      <span className='text-slate-700 text-xs break-words'>{post.description}</span>
+                  </div>  
+              </Link>
+          ))
+          }
+          </div>
 
       {/**
        * Books
