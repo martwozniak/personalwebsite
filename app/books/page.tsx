@@ -10,7 +10,7 @@ async function getAllBooks(){
     return book;
 }
 
-export default async  function BooksPage() {
+export default async function BooksPage() {
 
  const books = await getAllBooks();
 

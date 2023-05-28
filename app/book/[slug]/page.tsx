@@ -20,7 +20,6 @@ async function getBookFromParams(slug: string){
 }
 
 export default async function SingleBook({params}: Props) {
-    console.log(params.slug)
   const book = await getBookFromParams(params.slug);
 
 
