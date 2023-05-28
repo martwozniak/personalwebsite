@@ -96,7 +96,7 @@ export default async function IndexPage() {
         <div className='grid xs:grid-cols-1 md:grid-cols-4 xl:grid-cols-6 justify-between gap-4'>
           {
           posts.map((post) => (
-              <Link href={`/book/${post.slugAsParams}`}>
+              <Link href={`/blog/${post.slugAsParams}`}>
                   <div className='flex flex-col break-words'>
                       <Image src={post.featuredImage} alt={post.title} width={400} height={100} />
                       <span className='font-bold'>{post.title}</span>
