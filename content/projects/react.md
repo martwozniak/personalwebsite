@@ -1,7 +1,7 @@
 ---
 title: React Landing Page
 description: React Landing Page created with TypeScript, Tailwind, CSS, HTML
-featuredImage: /projects/48-godzinna-doba.png
+featuredImage: /projects/Cover.png
 slug: react-landing-page
 type: Project
 ---

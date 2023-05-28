@@ -3,7 +3,26 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 
-export default function IndexPage() {
+import { allBooks, allProjects } from '@/.contentlayer/generated';
+import Image from 'next/image';
+
+async function getAllProjects(){
+  const projects = allProjects;
+  return projects;
+}
+
+
+async function getAllBooks(){
+  const book = allBooks;
+  console.log("book:", book)
+
+  return book;
+}
+
+export default async function IndexPage() {
+  const projects = await getAllProjects();
+  const books = await getAllBooks();
+
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       
@@ -43,6 +62,44 @@ export default function IndexPage() {
 
       </div>
       <div>
+
+      {/**
+       * Projects
+       */}
+       <h2 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-xl md:text-3xl lg:text-4xl mt-4">Projects</h2>
+
+        <div className='grid xs:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-between gap-4'>
+        {
+        projects.map((project) => (
+            <Link href={`/project/${project.slugAsParams}`}>
+                <div className='flex flex-col break-words'>
+                    <Image src={project.featuredImage} alt={project.title} width={400} height={100} />
+                    <span className='font-bold'>{project.title}</span>
+                    <span className='text-slate-700 text-xs break-words'>{project.description}</span>
+                </div>  
+            </Link>
+        ))
+        }
+        </div>
+
+
+      {/**
+       * Books
+       */}
+       <h2 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-xl md:text-3xl lg:text-4xl mt-4">Books</h2>
+        <div className='grid xs:grid-cols-1 md:grid-cols-4 xl:grid-cols-6 justify-between gap-4'>
+          {
+          books.map((book) => (
+              <Link href={`/book/${book.slugAsParams}`}>
+                  <div className='flex flex-col break-words'>
+                      <Image src={book.featuredImage} alt={book.title} width={400} height={100} />
+                      <span className='font-bold'>{book.title}</span>
+                      <span className='text-slate-700 text-xs break-words'>{book.description}</span>
+                  </div>  
+              </Link>
+          ))
+          }
+          </div>
         
       </div>
 
