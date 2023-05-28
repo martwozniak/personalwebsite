@@ -72,7 +72,7 @@ export default async function IndexPage() {
       {/**
        * Projects
        */}
-       <h2 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-xl md:text-3xl lg:text-4xl mt-4">Projects</h2>
+       <h2 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-xl md:text-3xl lg:text-4xl mt-4 mb-4">Projects</h2>
 
         <div className='grid xs:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-between gap-4'>
         {
@@ -92,7 +92,7 @@ export default async function IndexPage() {
       {/**
        * Blog
        */}
-       <h2 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-xl md:text-3xl lg:text-4xl mt-4">Blog</h2>
+       <h2 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-xl md:text-3xl lg:text-4xl mt-4 mb-4">Blog</h2>
         <div className='grid xs:grid-cols-1 md:grid-cols-4 xl:grid-cols-6 justify-between gap-4'>
           {
           posts.map((post) => (
@@ -110,7 +110,7 @@ export default async function IndexPage() {
       {/**
        * Books
        */}
-       <h2 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-xl md:text-3xl lg:text-4xl mt-4">Books</h2>
+       <h2 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-xl md:text-3xl lg:text-4xl mt-4 mb-4">Books</h2>
         <div className='grid xs:grid-cols-1 md:grid-cols-4 xl:grid-cols-6 justify-between gap-4'>
           {
           books.map((book) => (
