@@ -1,7 +1,7 @@
 ---
 title: HTML Tutorial
 description: HTML Tutorial - Basics, semantics and more
-featuredImage: /projects/Cover.png
+featuredImage: /videos/Cover.png
 slug: html-tutorial
 type: Video
 link: none

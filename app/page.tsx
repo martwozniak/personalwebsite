@@ -3,9 +3,9 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 
-import { allBooks, allProjects, allPosts } from '@/.contentlayer/generated';
+import { allBooks, allProjects, allPosts, allVideos } from '@/.contentlayer/generated';
 import Image from 'next/image';
-
+// TODO: refactor callback getAll(callback)
 async function getAllProjects(){
   const projects = allProjects;
   return projects;
@@ -14,8 +14,6 @@ async function getAllProjects(){
 
 async function getAllBooks(){
   const book = allBooks;
-  console.log("book:", book)
-
   return book;
 }
 
@@ -24,10 +22,16 @@ async function getAllPosts(){
   return posts;
 }
 
+async function getAllVideos(){
+  const videos = allVideos;
+  return videos;
+}
+
 export default async function IndexPage() {
   const projects = await getAllProjects();
   const books = await getAllBooks();
   const posts = await getAllPosts();
+  const videos = await getAllVideos();
 
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
@@ -107,6 +111,23 @@ export default async function IndexPage() {
           }
           </div>
 
+   {/**
+       * Videos
+       */}
+       <h2 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-xl md:text-3xl lg:text-4xl mt-4 mb-4">Books</h2>
+        <div className='grid xs:grid-cols-1 md:grid-cols-4 xl:grid-cols-6 justify-between gap-4'>
+          {
+          videos.map((video) => (
+              <Link href={`/video/${video.slugAsParams}`}>
+                  <div className='flex flex-col break-words'>
+                      <Image src={video.featuredImage} alt={video.title} width={400} height={100} />
+                      <span className='font-bold'>{video.title}</span>
+                      <span className='text-slate-700 text-xs break-words'>{video.description}</span>
+                  </div>  
+              </Link>
+          ))
+          }
+          </div>
       {/**
        * Books
        */}
