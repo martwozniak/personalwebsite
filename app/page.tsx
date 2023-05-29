@@ -114,7 +114,7 @@ export default async function IndexPage() {
    {/**
        * Videos
        */}
-       <h2 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-xl md:text-3xl lg:text-4xl mt-4 mb-4">Books</h2>
+       <h2 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-xl md:text-3xl lg:text-4xl mt-4 mb-4">Videos</h2>
         <div className='grid xs:grid-cols-1 md:grid-cols-4 xl:grid-cols-6 justify-between gap-4'>
           {
           videos.map((video) => (
