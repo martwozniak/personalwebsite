@@ -113,11 +113,39 @@ const computedFields = {
     },
     computedFields,
   }))
+
+  export const Video = defineDocumentType(() => ({
+    name: "Video",
+    filePathPattern: `videos/**/*.mdx`,
+    contentType: "mdx",
+    fields: {
+      title: {
+        type: "string",
+        required: true,
+      },
+      description: {
+        type: "string",
+      },
+      published: {
+        type: "boolean",
+        default: true,
+      },
+      featuredImage: {
+        type: "string",
+        required: true,
+      },
+      link: {
+        type: "string",
+        required: true,
+      }
+    },
+    computedFields,
+  }))
   
   
   export default makeSource({
     contentDirPath: "./content",
-    documentTypes: [Book, Project, Post],
+    documentTypes: [Book, Project, Post, Video],
     mdx: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [
