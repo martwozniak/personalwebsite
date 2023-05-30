@@ -1,7 +1,7 @@
 ---
 title: JavaScript Tutorial
 description: JavaScript Tutorial - Basics, semantics and more
-featuredImage: /videos/Cover.png
+featuredImage: /videos/javascript.png
 slug: JavaScript-tutorial
 type: Video
 link: none

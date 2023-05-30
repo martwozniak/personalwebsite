@@ -1,7 +1,7 @@
 ---
 title: React Tutorial
 description: React Tutorial - Basics, semantics and more
-featuredImage: /videos/Cover.png
+featuredImage: /videos/react.png
 slug: react-tutorial
 type: Video
 link: none

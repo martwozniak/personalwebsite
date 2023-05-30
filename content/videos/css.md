@@ -1,7 +1,7 @@
 ---
 title: CSS Tutorial
 description: CSS Tutorial - Basics, semantics and more
-featuredImage: /videos/Cover.png
+featuredImage: /videos/css.png
 slug: css-tutorial
 type: Video
 link: none
