@@ -25,7 +25,7 @@ export default async function postsPage() {
 
        {
         posts.map((post) => (
-            <Link href={`/post/${post.slugAsParams}`}>
+            <Link href={`/blog/${post.slugAsParams}`}>
                 <div className='flex flex-col break-words'>
                     <Image src={post.featuredImage} alt={post.title} width={400} height={100} />
                     <span className='font-bold'>{post.title}</span>
