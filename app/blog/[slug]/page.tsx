@@ -28,12 +28,12 @@ export default async function PostPage({params}: Props) {
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
    
     <img src={post.featuredImage} alt={post.title}/>
-   
-    <div className="flex max-w-[980px] flex-col items-start gap-2">
+   {/**max-w-[980px] */}
+    <div className="flex flex-col items-start gap-2">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
             {post.title}
-        </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl">
+        </h1>   {/**max-w-[700px] */}
+        <p className="text-lg text-muted-foreground sm:text-xl">
             <Mdx 
             code={post.body.code}
             />
